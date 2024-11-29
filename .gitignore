@@ -3,4 +3,4 @@ myenv/
 __pycache__/
 *.log
 node_modules/
-
+checkpoints/
