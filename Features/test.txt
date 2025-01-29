@@ -1,0 +1,15 @@
+admin
+login
+index.html
+index.php
+favicon.ico
+dashboard
+user
+api
+uploads
+images
+css
+js
+config
+aaa
+aaaaa

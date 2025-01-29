@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Stream</title>
+</head>
+<body>
+    <h1>Log Stream</h1>
+    <pre id="log"></pre>
+    <script>
+        const eventSource = new EventSource('http://127.0.0.1:5000/stream_logs');
+        eventSource.onmessage = function(event) {
+            const logElement = document.getElementById('log');
+            logElement.textContent += event.data + '\n';
+        };
+        eventSource.onerror = function() {
+            console.error("EventSource error. Closing connection.");
+            eventSource.close();
+        };
+    </script>
+</body>
+</html>

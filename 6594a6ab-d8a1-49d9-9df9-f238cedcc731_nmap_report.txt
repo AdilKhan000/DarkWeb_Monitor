@@ -1,0 +1,4 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-01-29 08:35 EST
+Read data files from: /usr/share/nmap
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.10 seconds
+           Raw packets sent: 0 (0B) | Rcvd: 0 (0B)

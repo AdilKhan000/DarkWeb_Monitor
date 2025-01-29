@@ -1,9 +1,26 @@
 import re
 import requests
 from selenium import webdriver
+import queue
+import threading
 
 proxy_host = "127.0.0.1"
 proxy_port = 8118
+
+
+# Create a thread-safe log queue
+log_queue = queue.Queue()
+
+# Modify print statements to use a custom logging function
+def log_print(message, color=None):
+    # If color is used (from termcolor), remove the color formatting
+    if color:
+        from termcolor import colored
+        if message.startswith(colored('', color)):
+            message = message.split(message.split()[1], 1)[1].strip()
+    
+    log_queue.put(message)
+    print(message)  # Still print to terminal
 
 def clean_text(text):
     """Clean text by removing unwanted characters."""
